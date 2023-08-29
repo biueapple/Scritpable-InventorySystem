@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdb61522fdaf054098d938c8ab41e6c, type: 3}
+  m_Name: Inventory
+  m_EditorClassIdentifier: 
+  savePath: /Inventory
+  database: {fileID: 11400000, guid: 9b9583a9d24083c41ab2e513bca45903, type: 2}
+  storage:
+    slots:
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0
+    - AllowedItems: 
+      item:
+        name: 
+        id: -1
+        rating: 0
+        buffs: []
+        stackable: 0
+        type: 0
+        description: 
+      amount: 0

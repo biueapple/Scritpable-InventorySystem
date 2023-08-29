@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60e979f3c5226745aa268b027aafb43, type: 3}
+  m_Name: BasicBottom
+  m_EditorClassIdentifier: 
+  data:
+    name: BasicBottom
+    id: 4
+    rating: 0
+    buffs: []
+    stackable: 0
+    type: 0
+    description: 
+  sprite: {fileID: -1293748049, guid: bfcc571b80ed44e45a7940ed5b18976f, type: 3}
+  buffs:
+  - attribute: 0
+    value: 0
+    min: 1
+    max: 4
+  - attribute: 1
+    value: 0
+    min: 1
+    max: 5
+  ratings: 0100000002000000

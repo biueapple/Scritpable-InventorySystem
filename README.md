@@ -70,6 +70,12 @@ item type에 rune을 추가하고 모든 아이템에 rune[] 을 만들고
 
 //
 
+google spreadsheets를 이용한 level,exp,stat에 대한 정보들을 입력해놓고
 
+불러오는 방식을 만들어 놓음
+
+아직 단순하게 방법만 만들어 놓고 구현은 하지 않음
+
+//
 
 아직 만드는 중이라 [SerializeField]가 많이 붙어있음 확인용으로

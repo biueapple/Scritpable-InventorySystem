@@ -3,6 +3,7 @@
 인벤토리 시스템 완성
 
 
+
 //Inventory System
 
 scriptable database 만들어서 아이템 저장할 곳 만들고 (edit) (아이템을 만들면 자동으로 만들어진 database에 저장되도록 만들었음 모든 아이템에게 고유의 id를 부여하기 위해)
@@ -18,6 +19,7 @@ gound item에다가 scriptable item넣고 아이템을 획득해야 할때 creat
 scriptable item이 가지고 있는 데이터를 하나 만들어서 리턴해줌
 
 scriptable container에 save load도 있음 C:\Users\사용자명\AppData\LocalLow\DefaultCompany\My InventorySystem + savePath에 저장됨
+
 
 
 // ItemEffect
@@ -51,6 +53,7 @@ edit상태로 돌아왔을때 저장된 A안에도 B로 만들때 정해준 변�
 뭔가 더 좋은 방법이 있을거 같은데 모르겠음 문자열로 비교하는건 불안함
 
 
+
 // Rune
 
 아이템에 추가로 장비에 장착 가능한 rune이라는걸 만들어봄
@@ -74,6 +77,7 @@ item type에 rune을 추가하고 모든 아이템에 rune[] 을 만들고
 이런식으로 만드는게 좋은건지 모르겠는데 다른방법을 모르겠음
 
 
+
 // Google Spreadsheets
 
 google spreadsheets를 이용한 level,exp,stat에 대한 정보들을 입력해놓고
@@ -81,6 +85,7 @@ google spreadsheets를 이용한 level,exp,stat에 대한 정보들을 입력해
 불러오는 방식을 만들어 놓음
 
 아직 단순하게 방법만 만들어 놓고 구현은 하지 않음
+
 
 
 //

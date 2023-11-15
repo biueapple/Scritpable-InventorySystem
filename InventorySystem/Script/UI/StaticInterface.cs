@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class StaticInterface : ContainerInterface
+{
+    //StaticInterface은 슬롯을 자동으로 만들어주지 않고 직접 에디터상에서 만들고 인스펙터로 넣어줘야 함
+    public Slot_UI[] slots;
+
+    public override void CreateSlotsUI()
+    {
+        for(int i = 0; i < containerObject.storage.slots.Length; i++)
+        {
+            if(i >= slots.Length)
+            {
+                slotsInterface.Add(containerObject.storage.slots[i], null);
+            }
+            else
+            {
+                slots[i].Slot = containerObject.storage.slots[i];
+                slots[i].ContainerInterface = this;
+                slots[i].name = "slot_" + i;
+
+                slotsInterface.Add(containerObject.storage.slots[i], slots[i]);
+            }
+        }
+    }
+}

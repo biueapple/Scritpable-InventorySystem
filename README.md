@@ -82,6 +82,15 @@ google spreadsheets를 이용한 level,exp,stat에 대한 정보들을 입력해
 
 아직 단순하게 방법만 만들어 놓고 구현은 하지 않음
 
+//Skill
+//
+
+warrior의 스킬 4개를 만들었는데 만들다보니 느껴지는게
+
+cc기나 다른 스킬들을 만들려고 생각해보니 unit에 많이 추가될듯함
+
+publicScript에 있는 스크립트는 static이나 공용으로 쓰일 스크립트
+
 
 
 //

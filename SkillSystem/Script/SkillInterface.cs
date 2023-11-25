@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class SkillInterface : MonoBehaviour
 {
+    public Unit player;
     //½ºÅ³µé
     public Canvas canvas;
     public Image linePre;
@@ -21,6 +22,7 @@ public class SkillInterface : MonoBehaviour
     {
         for (int i = 0; i < skills.Length; i++)
         {
+            skills[i].Init(player);
             skills[i].triggerUpdate += Updating;
             skills[i].skillInterface = this;
         }

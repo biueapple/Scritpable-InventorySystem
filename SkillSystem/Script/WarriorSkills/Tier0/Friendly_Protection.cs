@@ -18,10 +18,11 @@ namespace WarriorSkills
                 return s.Replace("?", coefficient.ToString());
             } 
         }
+        public override float CoolTime { get { return cooltime - level; } }
 
-        new void Start()
+        public override void Init(Unit unit)
         {
-            base.Start();
+            base.Init(unit);
             type = SKILL_TYPE.PASSIVE;
         }
 
@@ -45,6 +46,8 @@ namespace WarriorSkills
             //키를 눌렀을때
             if (Input.GetKeyDown(_keyCode))
             {
+                if (cooltimer > 0)
+                    return;
                 //주위의 유닛을 가져와서 같은팀에게 전부 줘야함
                 //지금은 범위가 사각형이지만 원으로도 가능 Intersect.IsIsPointInCircleObject(위치, 반지름) 을 사용하면 됨 
                 //GameObject[] obj = Intersect.IsIsPointInCircleObject(player.transform.position, 5);
@@ -57,6 +60,7 @@ namespace WarriorSkills
                         obj[i].GetComponent<Unit>().stat.Barrier = new Barrier(coefficient, duration);
                     }
                 }
+                StartCoroutine(CooltimeCoroutine(CoolTime));
             }
         }
     }

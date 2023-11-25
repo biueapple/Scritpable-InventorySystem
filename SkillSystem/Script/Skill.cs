@@ -32,7 +32,7 @@ public enum TRIGGER_TYPE
 [System.Serializable]
 public abstract class Skill : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
 {
-    public Unit player;
+    protected Unit player;
     public SkillInterface skillInterface;
     [SerializeField]
     protected string s_name;
@@ -43,15 +43,15 @@ public abstract class Skill : MonoBehaviour , IPointerEnterHandler, IPointerExit
     /// <summary>
     /// 스킬 값 (대미지같은거)
     /// </summary>
-    public virtual float coefficient { get; }
+    public abstract float coefficient { get; }
     /// <summary>
     /// 스킬 값이 어떻게 정해지는지 string으로 리턴
     /// </summary>
-    public virtual string detail { get; }
+    public abstract string detail { get; }
     /// <summary>
     /// 모든 설명을 리턴
     /// </summary>
-    public virtual string expaln { get; }
+    public abstract string expaln { get; }
 
     [SerializeField]
     protected Sprite sprite;
@@ -61,6 +61,13 @@ public abstract class Skill : MonoBehaviour , IPointerEnterHandler, IPointerExit
     public int Level { get { return level; } }
     [SerializeField]
     protected int maxLevel;
+    //오리지널 쿨타임이 몇초인지
+    [SerializeField] 
+    protected float cooltime;
+    //쿨타임이 몇초 남았는지
+    protected float cooltimer;
+    //스킬 레벨에 따른 쿨타임이 몇초인지
+    public abstract float CoolTime { get; }
     [SerializeField]
     protected SKILL_TYPE type;
     public SKILL_TYPE TYPE { get { return type; } }
@@ -79,7 +86,7 @@ public abstract class Skill : MonoBehaviour , IPointerEnterHandler, IPointerExit
 
     public SkillTrigger trigger;
 
-    //타이머를 저장하는 코루틴
+    //스킬이 유지되는 타이머를 저장하는 코루틴
     protected Coroutine coroutine = null;
 
     //스킬을 찍으면 스킬을 적용하는 함수
@@ -91,18 +98,16 @@ public abstract class Skill : MonoBehaviour , IPointerEnterHandler, IPointerExit
 
     public Action triggerUpdate = null;
 
-    protected void Start()
+    public virtual void Init(Unit unit)
     {
         GetComponent<Image>().sprite = sprite;
+        player = unit;
         Updating();
-
         minusButton.onClick.RemoveAllListeners();
         minusButton.onClick.AddListener(LevelDown);
         plusButton.onClick.RemoveAllListeners();
         plusButton.onClick.AddListener(LevelUp);
     }
-
-
 
     public void LevelUp()
     {
@@ -187,6 +192,16 @@ public abstract class Skill : MonoBehaviour , IPointerEnterHandler, IPointerExit
             action();
         }
         coroutine = null;
+    }
+
+    protected IEnumerator CooltimeCoroutine(float t)
+    {
+        cooltimer = t;
+        while(cooltimer >= 0)
+        {
+            cooltimer -= Time.deltaTime;
+            yield return null;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)

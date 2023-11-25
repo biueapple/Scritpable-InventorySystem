@@ -1,5 +1,4 @@
 
-
 namespace WarriorSkills
 {
     public class Thorn : Skill
@@ -7,10 +6,11 @@ namespace WarriorSkills
         public override float coefficient { get { return 10 + level * 5 + player.stat.AP * 0.6f; } }
         public override string detail { get { return "10 + level * 5 + AP * 0.6f"; } }
         public override string expaln { get { return description.Replace("?", coefficient.ToString()); } }
+        public override float CoolTime { get { return cooltime - level; } }
 
-        new protected void Start()
+        public override void Init(Unit unit)
         {
-            base.Start();
+            base.Init(unit);
             type = SKILL_TYPE.PASSIVE;
         }
 

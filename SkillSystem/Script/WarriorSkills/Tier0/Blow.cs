@@ -10,10 +10,12 @@ namespace WarriorSkills
         public override float coefficient { get { return 20 + level * 10 + player.stat.AD * 0.6f; } }
         public override string detail { get { return "20 + level * 10 + AD * 0.6"; } }
         public override string expaln { get { return description.Replace("?", coefficient.ToString()); } }
+        public override float CoolTime { get { return cooltime - level; } }
+        private float skilltimer = 3;
 
-        new protected void Start()
+        public override void Init(Unit unit)
         {
-            base.Start();
+            base.Init(unit);
             type = SKILL_TYPE.ACTIVE;
         }
 
@@ -53,13 +55,17 @@ namespace WarriorSkills
             //키를 눌렀을때
             if (Input.GetKeyDown(_keyCode))
             {
+                if (cooltimer > 0)
+                    return;
                 //기본공격이 강화되는 스킬인데 이미 강화중일때 또 강화하면 안돼기에 중복체크를 해야함
                 if(!player.stat.AlreadyNomalBefore(Impact))
                 {
                     player.stat.AddNomalAttackBefore(Impact);
-
-                    coroutine = StartCoroutine(skillTimer(3, RemoveSkill));
                 }
+                if (coroutine != null)
+                    StopCoroutine(coroutine);
+                coroutine = StartCoroutine(skillTimer(skilltimer, RemoveSkill));
+                StartCoroutine(CooltimeCoroutine(CoolTime));
             }
         }
         //스킬의 내용

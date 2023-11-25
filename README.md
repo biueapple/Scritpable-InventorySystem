@@ -5,6 +5,8 @@
 //Inventory System
 //
 
+
+
 scriptable database 만들어서 아이템 저장할 곳 만들고 (edit) (아이템을 만들면 자동으로 만들어진 database에 저장되도록 만들었음 모든 아이템에게 고유의 id를 부여하기 위해)
 
 (itemObject에 [System.Serializable]를 달지 않으면 만든 itemObject의 이름을 바꾼다던가 할때 database에게 부여받은 id가 초기화 되는 문제가 발생)
@@ -53,6 +55,8 @@ edit상태로 돌아왔을때 저장된 A안에도 B로 만들때 정해준 변�
 // Rune
 //
 
+
+
 아이템에 추가로 장비에 장착 가능한 rune이라는걸 만들어봄
 
 rune도 결국 아이템이니까
@@ -85,6 +89,8 @@ google spreadsheets를 이용한 level,exp,stat에 대한 정보들을 입력해
 //Skill
 //
 
+
+
 warrior의 스킬 4개를 만들었는데 만들다보니 느껴지는게
 
 cc기나 다른 스킬들을 만들려고 생각해보니 unit에 많이 추가될듯함
@@ -94,6 +100,8 @@ publicScript에 있는 스크립트는 static이나 공용으로 쓰일 스크�
 //UI
 //
 
+
+
 ui쪽에서 mouseDown 과 mouseUp 을 통해서 슬롯끼리의 상호작용을 했는데
 
 mouseClick으로 변경하고 interface간의 공유할 corsorSlot을 하나 만들어서 공용으로 쓰는걸로 바꿈
@@ -102,6 +110,8 @@ mouseClick으로 변경하고 interface간의 공유할 corsorSlot을 하나 만
 
 //Crafting
 //
+
+
 
 마인크래프트에서 보던 조합법을 만들어봄 
 

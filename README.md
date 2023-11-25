@@ -125,6 +125,11 @@ mouseClick으로 변경하고 interface간의 공유할 corsorSlot을 하나 만
 
 로 변환해서 
 
+다시 hashtable처럼
+
+모든 크기의 테이블을 위한 리스트를 만들어서 저장하는 식으로 만들어봄
+
+
 
 //
 

@@ -10,10 +10,12 @@ public class StaticInterface : ContainerInterface
     {
         for(int i = 0; i < containerObject.storage.slots.Length; i++)
         {
+            //ui의 숫자보다 저장공간이 더 많다면 남는 칸은 ui상으로는 존재하지 않음
             if(i >= slots.Length)
             {
                 slotsInterface.Add(containerObject.storage.slots[i], null);
             }
+            //ui와 저장공간 둘다 있을때
             else
             {
                 slots[i].Slot = containerObject.storage.slots[i];
@@ -22,6 +24,7 @@ public class StaticInterface : ContainerInterface
 
                 slotsInterface.Add(containerObject.storage.slots[i], slots[i]);
             }
+            //ui가 더 많은 경우엔 에러가 나옴
         }
     }
 }

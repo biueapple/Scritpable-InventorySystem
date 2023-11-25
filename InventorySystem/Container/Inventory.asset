@@ -18,14 +18,24 @@ MonoBehaviour:
     slots:
     - AllowedItems: 
       item:
+        name: "\uBF08"
+        id: 1
+        rating: 0
+        attributeValues: []
+        rune: []
+        stackable: 1
+        type: 0
+        description: "\uB2E8\uC21C\uD55C \uBF08"
+    - AllowedItems: 
+      item:
         name: BasicHelmet
         id: 0
         rating: 4
         attributeValues:
-        - attribute: 2
-          value: 2
-          min: 1
-          max: 5
+        - attribute: 0
+          value: 4
+          min: 4
+          max: 6
         rune:
         - attributeValues: []
           word: 0
@@ -37,16 +47,6 @@ MonoBehaviour:
           word: 0
         stackable: 0
         type: 2
-        description: 
-    - AllowedItems: 
-      item:
-        name: 
-        id: -1
-        rating: 0
-        attributeValues: []
-        rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:

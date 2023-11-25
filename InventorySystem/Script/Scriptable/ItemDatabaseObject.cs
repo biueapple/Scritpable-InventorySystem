@@ -25,7 +25,7 @@ public class ItemDatabaseObject : ScriptableObject
     //아이템에 대한 정보를 id를 줬을때 리턴해줌
     public ItemObject GetItemObjectWithId(int _id)
     {
-        if(_id > ItemObjects.Count)
+        if(_id > ItemObjects.Count || _id < 0)
             return null;
 
         if (ItemObjects[_id].data.id == _id)

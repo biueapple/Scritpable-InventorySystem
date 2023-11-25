@@ -13,6 +13,9 @@ public class DynamicInterface : ContainerInterface
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWWEN_ITEMS;
 
+    public bool input;
+    public bool output;
+
     //ui만들기
     public override void CreateSlotsUI()
     {
@@ -25,7 +28,9 @@ public class DynamicInterface : ContainerInterface
             slot_ui.Slot = containerObject.storage.slots[i];
             //위치정하고
             slot_ui.GetComponent<RectTransform>().localPosition = GetPosition(i);
-           
+            slot_ui.input = input;
+            slot_ui.output = output;
+
             //저장
             slotsInterface.Add(containerObject.storage.slots[i], slot_ui);
         }

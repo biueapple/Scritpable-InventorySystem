@@ -158,7 +158,7 @@ public class ItemObject : ScriptableObject
 public class Item
 {
     public string name;
-    public int id;
+    public int id = -1;
 
     [SerializeField]
     //이 아이템의 확정적으로 붙은 등급

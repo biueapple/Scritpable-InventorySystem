@@ -30,7 +30,7 @@ public class ContainerObject : ScriptableObject
                 return;
             }
             //같은 아이템이 없다면 새로 채워넣기
-            slot = storage.GetEmptySlot();
+            slot = storage.GetEmptySlot(_item.type);
             if( slot != null )
             {
                 slot.UpdateSlot(_item, _amount);
@@ -42,7 +42,7 @@ public class ContainerObject : ScriptableObject
             //빈공간에 하나씩 넣기
             for(int i = 0; i < _amount; i++)
             {
-                slot = storage.GetEmptySlot();
+                slot = storage.GetEmptySlot(_item.type);
                 if( slot != null )
                 {
                     slot.UpdateSlot(_item, 1);
@@ -122,11 +122,11 @@ public class Container
         return null;
     }
     //비어있는 슬롯을 리턴 비어있는게 없다면 null
-    public ContainerSlot GetEmptySlot()
+    public ContainerSlot GetEmptySlot(ITEM_TYPE type)
     {
         for(int i = 0; i < slots.Length; i++)
         {
-            if (slots[i].Amount == 0 || slots[i].GetItem.id == -1)
+            if ((slots[i].Amount == 0 || slots[i].GetItem.id == -1) && slots[i].CanPlace(type))
             {
                 return slots[i];
             }
@@ -159,11 +159,13 @@ public class ContainerSlot
     public ContainerSlot()
     {
         UpdateSlot(new Item(), 0);
+        AllowedItems = new ITEM_TYPE[0];
     }
 
     public ContainerSlot(Item _item, int _amount)
     {
         UpdateSlot(_item, _amount);
+        AllowedItems = new ITEM_TYPE[0];
     }
 
     public void UpdateSlot(Item _item, int _amount)
@@ -206,6 +208,26 @@ public class ContainerSlot
         for(int i = 0; i < AllowedItems.Length; i++)
         {
             if (AllowedItems[i] == _item.type)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    //이 슬롯에 이 아이템이 들어올 수 있나?
+    public bool CanPlace(ITEM_TYPE type)
+    {
+        //내가 조건이 없는 슬롯이거나 상대가 빈 아이템이라면 가능
+        if (AllowedItems.Length == 0)
+        {
+            return true;
+        }
+
+        //내가 조건이 있는데 상대 아이템이 조건에 부합하면 가능
+        for (int i = 0; i < AllowedItems.Length; i++)
+        {
+            if (AllowedItems[i] == type)
             {
                 return true;
             }

@@ -9,6 +9,13 @@ public class Crafting : MonoBehaviour
     List<Recipe> recipes3X3 = new List<Recipe>();
     List<Recipe> recipes3X2 = new List<Recipe>();
     List<Recipe> recipes2X3 = new List<Recipe>();
+    List<Recipe> recipes2X2 = new List<Recipe>();
+    List<Recipe> recipes3X1 = new List<Recipe>();
+    List<Recipe> recipes1X3 = new List<Recipe>();
+    List<Recipe> recipes2X1 = new List<Recipe>();
+    List<Recipe> recipes1X2 = new List<Recipe>();
+    List<Recipe> recipes1X1 = new List<Recipe>();
+
     private void Start()
     {
         Recipe r = new Plank_Recipe();
@@ -19,22 +26,134 @@ public class Crafting : MonoBehaviour
             recipes3X2.Add(r);
         else if(r.recipe is Table2X3)
             recipes2X3.Add(r);
+        else if (r.recipe is Table2X2)
+            recipes2X2.Add(r);
+        else if (r.recipe is Table3X1)
+            recipes3X1.Add(r);
+        else if (r.recipe is Table1X3)
+            recipes1X3.Add(r);
+        else if (r.recipe is Table2X1)
+            recipes2X1.Add(r);
+        else if (r.recipe is Table1X2)
+            recipes1X2.Add(r);
+        else if (r.recipe is Table1X1)
+            recipes1X1.Add(r);
 
-        Debug.Log($"{recipes3X3.Count} {recipes3X2.Count} {recipes2X3.Count}");
         //recipes.Add(new Plank_Recipe());
     }
 
-    public void Combination(Table3X3 x3, out int id, out int result)
+    public void Combination(Table table, out int id, out int result)
     {
         id = -1;
         result = 0;
-        for(int i = 0; i < recipes.Count; i++)
+        if (table.codes == null)
+            return;
+        if (table is Table3X3)
         {
-            if(recipes[i].Comparison(x3))
+            for (int i = 0; i < recipes3X3.Count; i++)
             {
-                id = recipes[i].result;
-                result = recipes[i].resultCount;
-                return;
+                if (recipes3X3[i].Comparison(table))
+                {
+                    id = recipes3X3[i].result;
+                    result = recipes3X3[i].resultCount;
+                    return;
+                }
+            }
+        }
+        else if (table is Table3X2)
+        {
+            for (int i = 0; i < recipes3X2.Count; i++)
+            {
+                if (recipes3X2[i].Comparison(table))
+                {
+                    id = recipes3X2[i].result;
+                    result = recipes3X2[i].resultCount;
+                    return;
+                }
+            }
+        }
+        else if (table is Table2X3)
+        {
+            for (int i = 0; i < recipes2X3.Count; i++)
+            {
+                if (recipes2X3[i].Comparison(table))
+                {
+                    id = recipes2X3[i].result;
+                    result = recipes2X3[i].resultCount;
+                    return;
+                }
+            }
+        }
+        else if (table is Table2X2)
+        {
+            for (int i = 0; i < recipes2X2.Count; i++)
+            {
+                if (recipes2X2[i].Comparison(table))
+                {
+                    id = recipes2X2[i].result;
+                    result = recipes2X2[i].resultCount;
+                    return;
+                }
+            }
+        }
+        else if (table is Table3X1)
+        {
+            for (int i = 0; i < recipes3X1.Count; i++)
+            {
+                if (recipes3X1[i].Comparison(table))
+                {
+                    id = recipes3X1[i].result;
+                    result = recipes3X1[i].resultCount;
+                    return;
+                }
+            }
+        }
+        else if (table is Table2X2)
+        {
+            for (int i = 0; i < recipes1X3.Count; i++)
+            {
+                if (recipes1X3[i].Comparison(table))
+                {
+                    id = recipes1X3[i].result;
+                    result = recipes1X3[i].resultCount;
+                    return;
+                }
+            }
+        }
+        else if (table is Table2X1)
+        {
+            for (int i = 0; i < recipes2X1.Count; i++)
+            {
+                if (recipes2X1[i].Comparison(table))
+                {
+                    id = recipes2X1[i].result;
+                    result = recipes2X1[i].resultCount;
+                    return;
+                }
+            }
+        }
+        else if (table is Table1X2)
+        {
+            for (int i = 0; i < recipes1X2.Count; i++)
+            {
+                if (recipes1X2[i].Comparison(table))
+                {
+                    id = recipes1X2[i].result;
+                    result = recipes1X2[i].resultCount;
+                    return;
+                }
+            }
+        }
+        else if (table is Table1X1)
+        {
+            for (int i = 0; i < recipes1X1.Count; i++)
+            {
+                if (recipes1X1[i].Comparison(table))
+                {
+                    id = recipes1X1[i].result;
+                    result = recipes1X1[i].resultCount;
+                    return;
+                }
             }
         }
     }
@@ -46,7 +165,7 @@ public class Recipe
     public int result;
     public int resultCount;
 
-    public bool Comparison(Table3X3 x3)
+    public bool Comparison(Table x3)
     {
         return recipe._Equals(x3);
     }
@@ -96,7 +215,10 @@ public class Table
         if (x == 3 && y == 3) return new Table3X3();
         else if (x == 3 && y == 2) return new Table3X2();
         else if (x == 2 && y == 3) return new Table2X3();
-        else if(x == 2 && y == 2) return new Table2X2();
+        else if (x == 2 && y == 2) return new Table2X2();
+        else if (x == 2 && y == 1) return new Table2X1();
+        else if (x == 1 && y == 2) return new Table1X2();
+        else if (x == 1 && y == 1) return new Table1X1();
 
         return new Table();
     }
@@ -243,5 +365,61 @@ public class Table2X2 : Table
             { -1, -1},
             { -1, -1},
         };
+    }
+}
+
+public class Table3X1 : Table
+{
+    public Table3X1()
+    {
+        codes = new int[3, 1]
+        {
+            { -1 },
+            { -1 },
+            { -1 }
+        };
+    }
+}
+
+public class Table1X3 : Table
+{
+    public Table1X3()
+    {
+        codes = new int[1, 3]
+        {
+            {-1,-1, -1}
+        };
+    }
+}
+
+public class Table1X2 : Table
+{
+    public Table1X2()
+    {
+        codes = new int[1, 2]
+        {
+            {-1,-1 }
+        };
+    }
+}
+
+public class Table2X1 : Table
+{
+    public Table2X1()
+    {
+        codes = new int[2, 1]
+        {
+            { -1},
+            {-1 }
+        };
+    }
+}
+
+public class Table1X1 : Table
+{
+    public Table1X1()
+    {
+        codes = new int[1, 1] 
+        { { -1 } };
     }
 }

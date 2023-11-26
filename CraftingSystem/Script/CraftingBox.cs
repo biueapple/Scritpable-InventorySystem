@@ -25,7 +25,7 @@ public class CraftingBox : MonoBehaviour
 
     public void CraftingCheck(ContainerSlot slot)
     { 
-        Table3X3 matrix = new Table3X3();
+        Table matrix = new Table3X3();
         int[,] ints = new int[3, 3]
         {
             { containerInterface.containerObject.storage.slots[0].GetItem.id ,containerInterface.containerObject.storage.slots[1].GetItem.id,containerInterface.containerObject.storage.slots[2].GetItem.id },
@@ -33,6 +33,7 @@ public class CraftingBox : MonoBehaviour
             { containerInterface.containerObject.storage.slots[6].GetItem.id,containerInterface.containerObject.storage.slots[7].GetItem.id,containerInterface.containerObject.storage.slots[8].GetItem.id }
         };
         matrix.codes = ints;
+        matrix.Slice(matrix, out matrix);
         int id;
         int count;
         craftingManager.Combination(matrix, out id, out count);

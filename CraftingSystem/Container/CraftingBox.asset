@@ -20,99 +20,99 @@ MonoBehaviour:
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 
     - AllowedItems: 
       item:
         name: 
         id: -1
+        stackable: 0
+        type: 0
         rating: 0
         attributeValues: []
         rune: []
-        stackable: 0
-        type: 0
         description: 

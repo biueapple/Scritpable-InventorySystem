@@ -138,6 +138,12 @@ table 2
 
 모든 테이블 종류 추가
 
+조합법을 적용 시키는데 resultBox에 Action을 추가하는 방식으로 구현하려고 했는데 무한 반복하는 문제가 생김
+
+Action으로 box의 내용이 바뀌면 다시 resultBox의 Action을 호출하는 방식으로
+
+따라서 아이템을 넣고 뺄때마다 Action을 추가하고 빼는 과정이 추가됨 
+
 //
 
 아직 만드는 중이라 [SerializeField]가 많이 붙어있음 확인용으로
